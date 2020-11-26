@@ -27,8 +27,6 @@ public class FilmResource {
         return service.getFilm(id);
     }
 
-
-
     @Query
     @Description("Get a Hero from a galaxy far far away")
     public Hero getHero(@Name("name") String name) {

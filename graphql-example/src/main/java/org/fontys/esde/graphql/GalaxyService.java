@@ -55,12 +55,13 @@ public class GalaxyService {
         revengeOfTheSith.setEpisodeID(3);
         revengeOfTheSith.setDirector("George Lucas");
 
-        films.add(aNewHope);
-        films.add(theEmpireStrikesBack);
-        films.add(returnOfTheJedi);
         films.add(thePhantomMenace);
         films.add(attackOfTheClones);
         films.add(revengeOfTheSith);
+        films.add(aNewHope);
+        films.add(theEmpireStrikesBack);
+        films.add(returnOfTheJedi);
+
 
 
         Hero luke = new Hero();
@@ -158,9 +159,17 @@ public class GalaxyService {
      * @return
      */
     public Film getFilm(int id) {
-        return films.get(id);
+        for (Film film: films) {
+            if (film.getEpisodeID() == id){return film;}
+        }
+        return null;
     }
 
+    /**
+     * Returns the first hero with given name
+     * @param name
+     * @return
+     */
     public Hero getHero(String name) {
         for (Hero hero: heroes) {
             if (hero.getName().equals(name)){return hero;}
